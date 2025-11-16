@@ -3,6 +3,88 @@
 
 ---
 
+#### 📦 **NPM Dependency Types (Full Comparison Table)**
+
+| Type                     | Purpose                                             | Installed in Production?     | Auto-installed?          | Typical Use Case                                                   |
+| ------------------------ | --------------------------------------------------- | ---------------------------- | ------------------------ | ------------------------------------------------------------------ |
+| **dependencies**         | Required at **runtime**                             | ✅ Yes                        | ✅ Yes                    | Frameworks, libraries (React, Express)                             |
+| **devDependencies**      | Needed only during **development**                  | ❌ No                         | ✅ Yes                    | Testing tools, bundlers, linters (Jest, ESLint)                    |
+| **peerDependencies**     | Host project must provide this dependency           | ➖ Not applicable             | ❌ No (user gets warning) | Plugins, component libraries that expect shared React/Angular/etc. |
+| **peerDependenciesMeta** | Add metadata to peerDependencies (e.g., optional)   | ➖                            | ❌ No                     | Marking a peer dependency as **optional**                          |
+| **optionalDependencies** | Installed if possible, but ignored if install fails | ⚠️ Yes (if install succeeds) | ✅ Yes                    | OS-specific packages, optional add-ons                             |
+
+---
+
+# 📁 **package.json Examples**
+
+### ✅ **1. dependencies**
+
+```json
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0"
+  }
+}
+```
+
+### 🛠️ **2. devDependencies**
+
+```json
+{
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "eslint": "^8.0.0",
+    "webpack": "^5.0.0"
+  }
+}
+```
+
+### 🔗 **3. peerDependencies**
+
+For a React component library:
+
+```json
+{
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
+```
+
+### 🧩 **4. peerDependenciesMeta**
+
+Mark a peer dependency as optional:
+
+```json
+{
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  }
+}
+```
+
+### ⚙️ **5. optionalDependencies**
+
+```json
+{
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
+  }
+}
+```
+
+(If installation fails, npm will continue without error.)
+
+
+---
+
 # 🅰 **A**
 
 ---
