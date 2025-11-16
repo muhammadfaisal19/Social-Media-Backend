@@ -15,9 +15,9 @@
 
 ---
 
-# 📁 **package.json Examples**
+### 📁 **package.json Examples**
 
-### ✅ **1. dependencies**
+#### ✅ **1. dependencies**
 
 ```json
 {
@@ -28,7 +28,7 @@
 }
 ```
 
-### 🛠️ **2. devDependencies**
+#### 🛠️ **2. devDependencies**
 
 ```json
 {
@@ -40,7 +40,7 @@
 }
 ```
 
-### 🔗 **3. peerDependencies**
+#### 🔗 **3. peerDependencies**
 
 For a React component library:
 
@@ -53,7 +53,7 @@ For a React component library:
 }
 ```
 
-### 🧩 **4. peerDependenciesMeta**
+#### 🧩 **4. peerDependenciesMeta**
 
 Mark a peer dependency as optional:
 
@@ -70,7 +70,7 @@ Mark a peer dependency as optional:
 }
 ```
 
-### ⚙️ **5. optionalDependencies**
+#### ⚙️ **5. optionalDependencies**
 
 ```json
 {
@@ -80,16 +80,143 @@ Mark a peer dependency as optional:
 }
 ```
 
-(If installation fails, npm will continue without error.)
-
 
 ---
 
-# 🅰 **A**
+### 🔵 **1. BACKEND (Node.js + Express) Dependencies**
+
+#### **Core Backend**
+
+| Package           | Type          | Purpose                                     | Common Use                             |
+| ----------------- | ------------- | ------------------------------------------- | -------------------------------------- |
+| **express**       | Framework     | Build HTTP servers & APIs                   | Routing, middleware, REST APIs         |
+| **mongoose**      | Library (ODM) | Connect to MongoDB with schemas & models    | User model, CRUD operations            |
+| **dotenv**        | Library       | Load environment variables                  | Hide secrets like JWT keys             |
+| **cors**          | Middleware    | Enable cross-origin requests                | Allow Angular frontend to call backend |
+| **cookie-parser** | Middleware    | Parse cookies                               | Store JWTs in cookies                  |
+| **morgan**        | Middleware    | Log HTTP requests                           | Debug API traffic                      |
+| **body-parser**   | Middleware    | Parse JSON/body (optional in Express 4.16+) | Read POST request data                 |
+
+
+
+#### **Authentication & Security**
+
+| Package                | Type       | Purpose                   | Common Use                   |
+| ---------------------- | ---------- | ------------------------- | ---------------------------- |
+| **jsonwebtoken (JWT)** | Library    | Create and verify tokens  | Login auth, route protection |
+| **bcrypt / bcryptjs**  | Library    | Hash & compare passwords  | Secure password storage      |
+| **helmet**             | Middleware | Add security headers      | Protect from common attacks  |
+| **express-validator**  | Middleware | Validate & sanitize input | Validate form fields         |
+| **express-rate-limit** | Middleware | Rate limiting             | Prevent brute-force attacks  |
+| **csurf**              | Middleware | CSRF protection           | Cookie-based auth security   |
+
+
+
+#### **File Uploads & Utilities**
+
+| Package            | Type            | Purpose                      | Common Use                    |
+| ------------------ | --------------- | ---------------------------- | ----------------------------- |
+| **multer**         | Middleware      | Handle image/file uploads    | Profile images, uploads       |
+| **sharp**          | Library         | Image resizing & compression | Thumbnails, reduce image size |
+| **uuid**           | Library         | Generate unique IDs          | Unique filenames, resources   |
+| **lodash**         | Utility library | Utility functions            | Deep clone, merge, array ops  |
+| **dayjs / moment** | Utility library | Date/time formatting         | Timestamps, logs              |
+| **joi / yup**      | Validation      | Schema-based validation      | Validate request bodies       |
+
+
+
+#### **Email / Notifications**
+
+| Package        | Type    | Purpose     | Common Use         |
+| -------------- | ------- | ----------- | ------------------ |
+| **nodemailer** | Library | Send emails | OTP, welcome email |
+| **twilio**     | Library | Send SMS    | 2FA, alerts        |
+
+
+
+#### **Dev Tools**
+
+| Package                   | Type            | Purpose                | Common Use           |
+| ------------------------- | --------------- | ---------------------- | -------------------- |
+| **nodemon**               | Dev tool        | Auto-restart server    | Development server   |
+| **jest / mocha**          | Test frameworks | Backend tests          | API unit tests       |
+| **mongodb-memory-server** | Testing DB      | In-memory test MongoDB | Test without real DB |
+
+
+
+### 🔴 **2. FRONTEND (Angular) Dependencies**
+
+#### **Core Angular Packages**
+
+| Package                  | Type           | Purpose                 | Common Use                |
+| ------------------------ | -------------- | ----------------------- | ------------------------- |
+| **@angular/core**        | Framework core | Base Angular framework  | Components, DI            |
+| **@angular/common**      | Library        | Common directives/pipes | ngIf, ngFor               |
+| **@angular/forms**       | Library        | Forms handling          | Reactive & template forms |
+| **@angular/router**      | Library        | Client-side routing     | SPA navigation            |
+| **@angular/animations**  | Library        | Animations support      | UI transitions            |
+| **@angular/common/http** | Library        | HTTP client module      | API calls to Node backend |
+
+
+
+#### **Auth & Token Handling**
+
+| Package                | Type         | Purpose                              | Common Use          |
+| ---------------------- | ------------ | ------------------------------------ | ------------------- |
+| **@auth0/angular-jwt** | Auth library | Automatically attach JWT to requests | Protected API calls |
+
+
+
+#### **UI Libraries**
+
+| Package                  | Type          | Purpose                | Common Use             |
+| ------------------------ | ------------- | ---------------------- | ---------------------- |
+| **@angular/material**    | UI framework  | Material UI components | Forms, tables, dialogs |
+| **bootstrap**            | CSS framework | Responsive UI          | Layout, navigation     |
+| **primeng + primeicons** | UI framework  | Rich UI components     | Data tables, charts    |
+| **tailwindcss**          | Utility CSS   | Fast styling           | Utility-first UI       |
+
+
+
+#### **State Management (optional)**
+
+| Package                | Type                   | Purpose                | Common Use            |
+| ---------------------- | ---------------------- | ---------------------- | --------------------- |
+| **@ngrx/store**        | State management       | Global app state       | Auth state, UI state  |
+| **@ngrx/effects**      | Side-effects handler   | Async actions          | API calls             |
+| **@ngrx/router-store** | Router synchronization | Sync router with store | Deep routing features |
+
+
+
+#### **Charts / Extras**
+
+| Package         | Type                  | Purpose          | Common Use             |
+| --------------- | --------------------- | ---------------- | ---------------------- |
+| **chart.js**    | Library               | Charts & graphs  | Dashboards             |
+| **ngx-charts**  | Angular chart library | Chart components | Admin panels           |
+| **ngx-toastr**  | Notifications         | Toast alerts     | Success/error messages |
+| **ngx-spinner** | Utility               | Loading spinner  | API loading indicators |
+
+
+
+#### **Angular Dev Tools**
+
+| Package             | Type            | Purpose                   | Common Use                  |
+| ------------------- | --------------- | ------------------------- | --------------------------- |
+| **@angular/cli**    | Dev tool        | Angular project generator | Serve, build, test          |
+| **typescript**      | Language        | Type-safe JS              | Angular source code         |
+| **rxjs**            | Library         | Reactive programming      | Observables, HTTP responses |
+| **zone.js**         | Angular runtime | Change detection          | Event/async tracking        |
+| **karma / jasmine** | Testing         | Unit tests                | Angular component tests     |
+
+
+
+---
+### 🅰 **A**
 
 ---
 
-### **axios**
+#### **axios**
 
 *HTTP client to make API requests.*
 
@@ -110,7 +237,7 @@ axios.get("/api/users");
 
 ---
 
-### **@angular/router**
+#### **@angular/router**
 
 *Handles page navigation in Angular.*
 
@@ -131,11 +258,11 @@ RouterModule.forRoot(routes);
 
 ---
 
-# 🅱 **B**
+### 🅱 **B**
 
 ---
 
-### **bcrypt**
+#### **bcrypt**
 
 *Hashes passwords securely.*
 
@@ -155,7 +282,7 @@ bcrypt.hash("pass", 10);
 
 ---
 
-### **body-parser**
+#### **body-parser**
 
 *(Now built into Express via `express.json()`)*
 
@@ -175,11 +302,11 @@ app.use(express.json());
 
 ---
 
-# 🅲 **C**
+### 🅲 **C**
 
 ---
 
-### **cors**
+#### **cors**
 
 *Allows Angular to access Node/Express backend.*
 
@@ -199,7 +326,7 @@ app.use(require("cors")());
 
 ---
 
-### **compression**
+#### **compression**
 
 *Gzip compression for faster responses.*
 
@@ -219,11 +346,11 @@ app.use(compression());
 
 ---
 
-# 🅳 **D**
+### 🅳 **D**
 
 ---
 
-### **dotenv**
+#### **dotenv**
 
 ```js
 require("dotenv").config();
@@ -240,11 +367,11 @@ require("dotenv").config();
 
 ---
 
-# 🅴 **E**
+### 🅴 **E**
 
 ---
 
-### **express**
+#### **express**
 
 ```js
 const app = express();
@@ -263,7 +390,7 @@ const app = express();
 
 ---
 
-### **express-validator**
+#### **express-validator**
 
 ```js
 body("email").isEmail();
@@ -281,11 +408,11 @@ body("email").isEmail();
 
 ---
 
-# 🅵 **F**
+### 🅵 **F**
 
 ---
 
-### **firebase** (optional)
+#### **firebase** (optional)
 
 ```js
 import { initializeApp } from "firebase/app";
@@ -303,11 +430,11 @@ import { initializeApp } from "firebase/app";
 
 ---
 
-# 🅶 **G**
+### 🅶 **G**
 
 ---
 
-### **glob**
+#### **glob**
 
 ```js
 glob("*.js", console.log);
@@ -325,11 +452,11 @@ glob("*.js", console.log);
 
 ---
 
-# 🅷 **H**
+### 🅷 **H**
 
 ---
 
-### **helmet**
+#### **helmet**
 
 ```js
 app.use(helmet());
@@ -347,11 +474,11 @@ app.use(helmet());
 
 ---
 
-# 🅸 **I**
+### 🅸 **I**
 
 ---
 
-### **rxjs**
+#### **rxjs**
 
 ```ts
 observable.subscribe();
@@ -369,11 +496,11 @@ observable.subscribe();
 
 ---
 
-# 🅹 **J**
+### 🅹 **J**
 
 ---
 
-### **jsonwebtoken (JWT)**
+#### **jsonwebtoken (JWT)**
 
 ```js
 jwt.sign({ id: 1 }, "secret");
@@ -391,11 +518,11 @@ jwt.sign({ id: 1 }, "secret");
 
 ---
 
-# 🅺 **K**
+### 🅺 **K**
 
 ---
 
-### **karma** (Angular testing tool)
+#### **karma** (Angular testing tool)
 
 ```bash
 ng test
@@ -413,11 +540,11 @@ ng test
 
 ---
 
-# 🅻 **L**
+### 🅻 **L**
 
 ---
 
-### **lodash**
+#### **lodash**
 
 ```js
 _.chunk([1,2,3,4], 2);
@@ -435,11 +562,11 @@ _.chunk([1,2,3,4], 2);
 
 ---
 
-# 🅼 **M**
+### 🅼 **M**
 
 ---
 
-### **mongoose**
+#### **mongoose**
 
 ```js
 mongoose.connect("mongodb://localhost/db");
@@ -457,7 +584,7 @@ mongoose.connect("mongodb://localhost/db");
 
 ---
 
-### **multer**
+#### **multer**
 
 ```js
 upload.single("image");
@@ -475,7 +602,7 @@ upload.single("image");
 
 ---
 
-### **morgan**
+#### **morgan**
 
 ```js
 app.use(morgan("dev"));
@@ -493,11 +620,11 @@ app.use(morgan("dev"));
 
 ---
 
-# 🅽 **N**
+### 🅽 **N**
 
 ---
 
-### **nodemon**
+#### **nodemon**
 
 ```bash
 nodemon server.js
@@ -515,11 +642,11 @@ nodemon server.js
 
 ---
 
-# 🅾 **O**
+### 🅾 **O**
 
 ---
 
-### **openapi / swagger-ui-express**
+#### **openapi / swagger-ui-express**
 
 ```js
 app.use('/docs', swaggerUi.serve);
@@ -537,11 +664,11 @@ app.use('/docs', swaggerUi.serve);
 
 ---
 
-# 🅿 **P**
+### 🅿 **P**
 
 ---
 
-### **passport**
+#### **passport**
 
 ```js
 passport.use(strategy);
@@ -559,7 +686,7 @@ passport.use(strategy);
 
 ---
 
-### **primeNG**
+#### **primeNG**
 
 ```ts
 import { ButtonModule } from 'primeng/button';
@@ -577,11 +704,11 @@ import { ButtonModule } from 'primeng/button';
 
 ---
 
-# 🆀 **Q**
+### 🆀 **Q**
 
 ---
 
-### **qs**
+#### **qs**
 
 ```js
 qs.parse("?name=john");
@@ -599,11 +726,11 @@ qs.parse("?name=john");
 
 ---
 
-# 🆁 **R**
+### 🆁 **R**
 
 ---
 
-### **rimraf**
+#### **rimraf**
 
 ```bash
 rimraf dist/
@@ -621,11 +748,11 @@ rimraf dist/
 
 ---
 
-# 🆂 **S**
+### 🆂 **S**
 
 ---
 
-### **socket.io**
+#### **socket.io**
 
 ```js
 io.on("connection", socket => {});
@@ -643,7 +770,7 @@ io.on("connection", socket => {});
 
 ---
 
-### **sass**
+#### **sass**
 
 ```scss
 $color: blue;
@@ -661,11 +788,11 @@ $color: blue;
 
 ---
 
-# 🆃 **T**
+### 🆃 **T**
 
 ---
 
-### **typescript**
+#### **typescript**
 
 ```ts
 let x: number = 10;
@@ -683,11 +810,11 @@ let x: number = 10;
 
 ---
 
-# 🆄 **U**
+### 🆄 **U**
 
 ---
 
-### **uuid**
+#### **uuid**
 
 ```js
 uuid.v4();
@@ -704,11 +831,11 @@ uuid.v4();
 
 ---
 
-# 🆅 **V**
+### 🆅 **V**
 
 ---
 
-### **validator**
+#### **validator**
 
 ```js
 validator.isEmail("test@gmail.com");
@@ -726,11 +853,11 @@ validator.isEmail("test@gmail.com");
 
 ---
 
-# 🆆 **W**
+### 🆆 **W**
 
 ---
 
-### **winston**
+#### **winston**
 
 ```js
 winston.log("info", "message");
@@ -748,11 +875,11 @@ winston.log("info", "message");
 
 ---
 
-# 🆇 **X**
+### 🆇 **X**
 
 ---
 
-### **xml2js**
+#### **xml2js**
 
 ```js
 xml2js.parseString(xml);
@@ -770,11 +897,11 @@ xml2js.parseString(xml);
 
 ---
 
-# 🆈 **Y**
+### 🆈 **Y**
 
 ---
 
-### **yargs**
+#### **yargs**
 
 ```js
 yargs.command("run", "Run script");
@@ -792,11 +919,11 @@ yargs.command("run", "Run script");
 
 ---
 
-# 🆉 **Z**
+### 🆉 **Z**
 
 ---
 
-### **zod**
+#### **zod**
 
 ```js
 z.string().parse("hello");
