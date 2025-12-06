@@ -22,6 +22,7 @@ education-mean/
 ├── tests/                       # Project-level tests (e2e)
 ├── .vscode/                     # Dev environment settings (optional)
 ├── docker-compose.yml
+├── etc (et cetera)/
 ├── README.md
 └── .gitignore
 ```
@@ -158,7 +159,7 @@ backend/
 │   │   ├── environment.ts
 │   │   ├── environment.prod.ts
 │   │   └── environment.staging.ts
-|
+|   |
 │   ├── etc (et cetera)/
 │   │   ├── etc.ts
 │   │   └── exampleEtc.ts
@@ -196,7 +197,11 @@ frontend/
 │   │   ├── environment.ts                      # Default environment
 │   │   ├── environment.prod.ts                 # Production environment
 │   │   └── environment.staging.ts              # Staging environment
-│
+│   |
+│   ├── etc (et cetera)/
+│   │   ├── etc.ts
+│   │   └── exampleEtc.ts
+|
 │   ├── app/                                     # Main application
 │   │   ├── core/                                # Core services, interceptors, etc.
 │   │   │   ├── core.module.ts
@@ -262,7 +267,7 @@ frontend/
 │   │   │   ├── logging.middleware.ts
 │   │   │   ├── error-handling.middleware.ts
 │   │   │   └── auth.middleware.ts
-│   │
+│   │   |
 │   │   ├── etc/                                 # Miscellaneous files (not fitting elsewhere)
 │   │   │   ├── utils.ts
 │   │   │   └── constants.ts
@@ -310,7 +315,11 @@ devops/
 │   ├── main.tf
 │   ├── variables.tf
 │   └── outputs.tf
-│
+│   |
+│   ├── etc (et cetera)/
+│   │   ├── etc.ts
+│   │   └── exampleEtc.ts
+|
 └── scripts/
     ├── build.sh
     ├── deploy.sh
